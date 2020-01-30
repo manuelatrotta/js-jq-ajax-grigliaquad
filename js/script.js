@@ -3,26 +3,21 @@
 //se è > di 5 il quadrato diventa verde.
 //Il numero ottenuto appare al centro del quadrato.
 //I quadrati fateli prima a mano e poi con javascript
-
-$.ajax({
-  url:"https://flynn.boolean.careers/exercises/api/random/int",
-  method: "GET",
-  success: function(data, stato) {
-    if( data <= 5){
-    $('.cella').addClass('yellow');
-    }else{
-    $('cella').addClass('green');
-    }
-    console.log(data);
-  },
-  error:function (richiesta, stato, errore){
-    alert('errore' + errore)
-  }
-
+$('.cella').on('click',
+  function() {
+    $.ajax({
+      url:"https://flynn.boolean.careers/exercises/api/random/int",
+      method: "GET",
+      success: function(data, stato) {
+        if (data<=5) $(this).addClass('yellow');
+        else $(this).addClass('green');
+        },
+        error:function (richiesta, stato, errore){
+      alert('errore' + errore);
+      }
+    });
 });
-
 //if( numberRandom <= 5) {
 //  $('.cella').addClass('yellow');
 //}else{
 //  $('cella').addClass('green');
-//}

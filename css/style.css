@@ -17,3 +17,11 @@ body{
   display: flex;
   flex-direction: row;
 }
+
+.yellow{
+  background-color: yellow;
+}
+
+.green{
+  background-color: green;
+}

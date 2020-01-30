@@ -6,14 +6,17 @@
 $(document).ready(function() {
   $('.cella').on('click',
     function() {
+     var cliccato = $(this);
       $.ajax({
         url:"https://flynn.boolean.careers/exercises/api/random/int",
         method: "GET",
         success: function(data, stato){
           console.log(data);
+          cliccato.text(data.response);
           if (data.response<=5){
-            $('cella').addClass('yellow');
-          }else {$(this).addClass('green');
+            cliccato.addClass('yellow');
+          }else {
+            cliccato.addClass('green');
           }
           console.log(data.response);
           },

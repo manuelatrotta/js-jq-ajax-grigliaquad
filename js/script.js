@@ -5,15 +5,24 @@
 //I quadrati fateli prima a mano e poi con javascript
 
 $.ajax({
-  url:"",
-  method:,
-  success:,
-  error:,
+  url:"https://flynn.boolean.careers/exercises/api/random/int",
+  method: "GET",
+  success: function(data, stato) {
+    if( data <= 5){
+    $('.cella').addClass('yellow');
+    }else{
+    $('cella').addClass('green');
+    }
+    console.log(data);
+  },
+  error:function (richiesta, stato, errore){
+    alert('errore' + errore)
+  }
 
 });
 
 //if( numberRandom <= 5) {
-  $('.cella').addClass('yellow');
-}else{
-  $('cella').addClass('green');
-}
+//  $('.cella').addClass('yellow');
+//}else{
+//  $('cella').addClass('green');
+//}

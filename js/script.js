@@ -3,7 +3,29 @@
 //se è > di 5 il quadrato diventa verde.
 //Il numero ottenuto appare al centro del quadrato.
 //I quadrati fateli prima a mano e poi con javascript
+
+//function cube () {
+//  var cella;
+//  var riga;
+
+//  for(var i = 1; i <= 6; i++) {
+//    riga = $('<tr>');
+//
+//    for(var j=1; j <= 6; j++) {
+//      cella = $('<td>');
+//      cella.html(i*j);
+//      riga.append(cella);
+//    }
+//    $('#cella').append(riga);
+//  }
+
 $(document).ready(function() {
+
+    for (var i = 0; i < 36; i++) {
+      var cella = $('.template .cella').clone();
+      $('.container').append(cella);
+    }
+
   $('.cella').on('click',
     function() {
      var cliccato = $(this);

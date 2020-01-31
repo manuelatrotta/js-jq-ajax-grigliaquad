@@ -29,6 +29,8 @@ $(document).ready(function() {
   $('.cella').on('click',
     function() {
      var cliccato = $(this);
+     //se il quadrato è gia stato cliccato non è possibile ricliccarlo.
+     if(!cliccato.hasClass('yellow') && !cliccato.hasClass('green')) {
       $.ajax({
         url:"https://flynn.boolean.careers/exercises/api/random/int",
         method: "GET",
@@ -46,8 +48,10 @@ $(document).ready(function() {
             alert('errore' + errore);
           }
       });
+    }
   });
 });
+
 //if( numberRandom <= 5) {
 //  $('.cella').addClass('yellow');
 //}else{
